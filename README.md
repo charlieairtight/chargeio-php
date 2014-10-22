@@ -6,7 +6,7 @@ ChargeIO PHP Client Library. This is a fork to add basic autoloading capabilitie
 [https://github.com/charge-io/chargeio-php](https://github.com/charge-io/chargeio-php)
 
 Installation
------------
+---------------------------
 
 Download the PHP client library by doing the following:
 
@@ -14,7 +14,10 @@ Download the PHP client library by doing the following:
     
 To use the library in your application, add the following to your PHP script:
 
-    require_once '/path/to/chargeio-php/lib/ChargeIO/autoload.php';
+    require_once '/path/to/chargeio-php/src/ChargeIO/autoload.php';
+
+Usage
+-----
     
 The library's APIs require credentials to access your merchant data on the
 ChargeIO servers. You can provide credentials as arguments to the APIs used to
