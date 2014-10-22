@@ -1,18 +1,20 @@
 chargeio-php
 ============
 
-ChargeIO PHP Client Library
+ChargeIO PHP Client Library. This is a fork to add basic autoloading capabilities and a few tweaks. The original owner and credits goes to:
+
+[https://github.com/charge-io/chargeio-php](https://github.com/charge-io/chargeio-php)
 
 Installation
 -----------
 
 Download the PHP client library by doing the following:
 
-    git clone git://github.com/charge-io/chargeio-php.git
+    git clone git://github.com/charlieairtight/chargeio-php.git
     
 To use the library in your application, add the following to your PHP script:
 
-    require_once '/path/to/chargeio-php/lib/ChargeIO.php';
+    require_once '/path/to/chargeio-php/lib/ChargeIO/autoload.php';
     
 The library's APIs require credentials to access your merchant data on the
 ChargeIO servers. You can provide credentials as arguments to the APIs used to
@@ -21,6 +23,10 @@ use when necessary. To set the default credentials, substitute your ChargeIO
 public key and test or live-mode secret key in a call to setCredentials:
 
     ChargeIO::setCredentials(new ChargeIO_Credentials('<public_key>', '<secret_key>'));
+
+To enable debug mode:
+
+    ChargeIO::setDebug(true);
 
 Once your credentials are set, running a basic credit card charge looks like:
 
@@ -34,8 +40,13 @@ POST the token ID you receive to your PHP script and then perform the charge:
     $amount = $_POST['amount'];
     $token_id = $_POST['token_id'];
     $charge = ChargeIO_Charge::create(new ChargeIO_PaymentMethodReference(array('id' => $token_id)), $amount);
-    
-Documentation
+
+Response
+--------
+
+Coming soon...
+
+Official Documentation
 -----------
 
 The latest ChargeIO API documentation is available at https://chargeio.com/developers.
